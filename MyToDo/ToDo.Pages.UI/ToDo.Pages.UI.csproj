@@ -6,7 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ToDo.Domain\ToDo.Domain.csproj" />
-    <ProjectReference Include="..\ToDo.Extensibility\ToDo.Extensibility.csproj" />
+    <ProjectReference Include="..\ToDo.Module\ToDo.Module.csproj" />
   </ItemGroup>
 </Project>
