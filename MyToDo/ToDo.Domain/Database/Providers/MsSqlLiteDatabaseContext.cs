@@ -7,16 +7,16 @@ namespace ToDo.Domain.Database.Providers
 {
     public class MsSqlLiteDatabaseContext : DbContext
     {
-        private readonly string sqlLiteDbFilePath;
+        private readonly string sqlLiteConnectionString;
 
         public MsSqlLiteDatabaseContext(IOptionsSnapshot<ConfigurationSettings> configurationSettings)
         {
-            sqlLiteDbFilePath = configurationSettings.Value.SqlLiteDbFilePath;
+            sqlLiteConnectionString = configurationSettings.Value.SqlLiteConnectionString;
         }
 
         public DbSet<ToDoDbModel> ToDos { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
-             => options.UseSqlite($"Data Source={sqlLiteDbFilePath}");
+             => options.UseSqlite(sqlLiteConnectionString);
     }
 }

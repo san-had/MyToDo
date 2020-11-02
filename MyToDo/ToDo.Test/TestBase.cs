@@ -26,7 +26,7 @@ namespace ToDo.Test
 
             optionsSnapShotMock = new Mock<IOptionsSnapshot<ConfigurationSettings>>();
             kernel.Bind<IOptionsSnapshot<ConfigurationSettings>>().ToConstant(optionsSnapShotMock.Object);
-            optionsSnapShotMock.SetupGet(m => m.Value).Returns(new ConfigurationSettings { SqlLiteDbFilePath = ":memory:" });
+            optionsSnapShotMock.SetupGet(m => m.Value).Returns(new ConfigurationSettings { SqlLiteConnectionString = "Data Source=:memory:" });
         }
 
         public void Dispose()

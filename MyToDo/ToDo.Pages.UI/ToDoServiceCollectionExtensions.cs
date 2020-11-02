@@ -13,6 +13,7 @@ namespace ToDo.Pages.UI
         public static IServiceCollection AddToDo(this IServiceCollection services)
         {
             services.AddScoped<MsSqlLiteDatabaseContext>();
+            services.AddScoped<MsSqlDatabaseContext>();
             services.AddScoped<IToDoEntityConverter, ToDoEntityConverter>();
             services.AddScoped<IToDoRepository, ToDoRepository>();
             services.AddScoped<IToDoService, ToDoService>();
