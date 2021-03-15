@@ -11,7 +11,7 @@ namespace ToDo.Domain.Migrations
         {
             using (var serviceScope = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope())
             {
-                var context = serviceScope.ServiceProvider.GetService<MsSqlLiteDatabaseContext>();
+                var context = serviceScope.ServiceProvider.GetService<MsSqlDatabaseContext>();
                 if (!context.Database.EnsureCreated())
                 {
                     context.Database.Migrate();
