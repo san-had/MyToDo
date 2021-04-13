@@ -12,10 +12,10 @@ namespace ToDo.Domain.Repositories
 {
     public class ToDoRepository : IToDoRepository
     {
-        private readonly MsSqlDatabaseContext dbContext;
+        private readonly MsSqlLiteDatabaseContext dbContext;
         private readonly IToDoEntityConverter toDoEntityConverter;
 
-        public ToDoRepository(MsSqlDatabaseContext dbContext, IToDoEntityConverter toDoEntityConverter)
+        public ToDoRepository(MsSqlLiteDatabaseContext dbContext, IToDoEntityConverter toDoEntityConverter)
         {
             this.dbContext = dbContext;
             this.toDoEntityConverter = toDoEntityConverter;
